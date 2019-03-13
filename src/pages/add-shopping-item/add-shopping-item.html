@@ -1,0 +1,62 @@
+<ion-header>
+
+  <ion-navbar color="orange">
+    <ion-title>Add Your Radio Here</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div class="add">
+    <h2>Please Fill Information Correctly Other Wise Rejected</h2>
+  </div>
+
+    <ion-item>
+      <ion-label floating>Your Name</ion-label>
+      <ion-input [(ngModel)]="item.name" type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label floating>Your Email</ion-label>
+      <ion-input [(ngModel)]="item.email" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Radio Name</ion-label>
+      <ion-input [(ngModel)]="item.radio_name" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Radio Image Url</ion-label>
+      <ion-input [(ngModel)]="item.img_url" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Radio Slogan</ion-label>
+      <ion-input [(ngModel)]="item.slogan" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Radio Stream Url</ion-label>
+      <ion-input [(ngModel)]="item.stream" type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Radio's Language</ion-label>
+      <ion-input [(ngModel)]="item.category" type="text"></ion-input>
+    </ion-item>
+
+    <ion-fab bottom right>
+      <button ion-fab (click)="addItem(item)" color="orange">
+        <ion-icon name="send"></ion-icon>
+      </button>
+    </ion-fab>
+    <br>
+    <br>
+    <div class="update">
+      <h6>For Updating Information Of Your Radio Then Also Submit This Form</h6>
+    </div>
+
+</ion-content>

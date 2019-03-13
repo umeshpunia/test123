@@ -1,0 +1,36 @@
+<ion-header no-border>
+  <ion-navbar transparent color="light">
+    <ion-buttons (click)="dismiss()">
+      <button color="light" ion-button icon-only>
+        <ion-icon name="md-close"></ion-icon> close
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-padding>
+
+<div class="profile-header" [ngStyle]="{'background-image': 'url(' + params.image  + ')'}"></div>
+  <div class="profile">
+    <div class="profile-box">
+
+      <h1>{{params.head}}</h1>
+
+      <ion-img class="profile-image" src="{{ params.image }}"></ion-img>
+      <h3 padding-top>{{ params.title }}</h3>
+      <p padding-top>{{ params.description }}</p>
+      <!-- play/stop button-->
+      <div>
+        <input #dummy style="display: none" type="text" value="{{ params.url }}">
+        <button ion-button *ngIf="!playing" color="light" large (click)="play(dummy.value)" clear icon-only>
+          <ion-icon name="play"></ion-icon>
+        </button>
+        <button ion-button color="dark" *ngIf="playing" color="light" large (click)="pause()" clear icon-only>
+          <ion-icon name="pause"></ion-icon>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</ion-content>

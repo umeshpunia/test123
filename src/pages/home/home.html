@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title text-center>
+      <b>All Haryanvi Radios</b>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <!--*********** List  ***********-->
+  <ion-list class="wave" no-lines>
+    <ion-item tappable *ngFor="let radio of items | async" (click)="openPlayer(radio)">
+      <ion-thumbnail item-left>
+        <img [src]="radio.image">
+      </ion-thumbnail>
+      <h2>Name :- <br> {{radio.title}}</h2>
+      <p>Language :- {{radio.category}}</p>
+      <p>About Radio :- {{radio.description}}</p>
+    </ion-item>
+  </ion-list>
+
+  <ion-fab bottom right>
+    <button ion-fab navPush="AddShoppingItemPage" color="orange">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab bottom center>
+    <button (click)="share()" ion-fab color="primary">
+      <ion-icon name="share"></ion-icon>
+    </button>
+  </ion-fab>
+
+  <ion-fab bottom left>
+    <button navPush="InformationPage" ion-fab color="secondary">
+      <ion-icon name="information"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>
